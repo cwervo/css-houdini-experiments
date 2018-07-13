@@ -1,4 +1,5 @@
-# houdini-experiments
+# Necker cube paint in CSS Houdini
 
-- use `http-server` or similar in one demo folder to serve files
-- view in chrome canary or other browser that supports diverse houdini features
+- View in Chrome Canary or other browser that supports diverse houdini features (`chrome://flags/#enable-experimental-web-platform-features`)
+
+Forked from KarstenBuckstegge's [houdini-experiments](https://github.com/KarstenBuckstegge/houdini-experiments)
