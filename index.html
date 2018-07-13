@@ -4,23 +4,32 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Houdini Necker Cube</title>
+        <title>Houdini</title>
 
         <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
-        <script> CSS.paintWorklet.addModule('worklet.js'); </script>
+        <script>
+            CSS.paintWorklet.addModule('worklet.js');
+        </script>
 
-        <!-- <div class="houdini"></div> -->
         <textarea class="houdini"></textarea>
         <div class="sibling" />
 
             <script>
                 CSS.registerProperty({
-                    name: '--line-color',
+                    name: '--box-color',
                     syntax: '<color>',
                     initialValue: 'green',
-                    inherits: true
+                    inherits: false
+                });
+
+
+                CSS.registerProperty({
+                    name: '--side-length',
+                    syntax: '<number>',
+                    initialValue: '1',
+                    inherits: false
                 });
             </script>
     </body>

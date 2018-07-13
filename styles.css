@@ -1,5 +1,5 @@
 .houdini {
-    background-image: paint(necker-cube);
+    background-image: paint(dancing-bars);
 
     width: 400px;
     height: 400px;
@@ -7,22 +7,22 @@
     animation: colorRotate 2s steps(10) infinite;
 }
 
-
 @keyframes colorRotate {
     0% {
-        --line-color: red;
+        --box-color: red;
     }
     100% {
-        --line-color: green;
+        --box-color: green;
     }
 }
 
-/* .houdini { */
-/*     -webkit-mask-image: paint(necker-cube); */
-/*  */
-/*     background: url('assets/shmebulock_ftw.png'); */
-/*     background-size: cover; */
-/*  */
-/*     width: 600px; */
-/*     height: 400px; */
-/* } */
+
+/* .houdini {
+    -webkit-mask-image: paint(dancing-bars);
+
+    background: url('assets/shmebulock_ftw.png');
+    background-size: cover;
+
+    width: 600px;
+    height: 400px;
+} */

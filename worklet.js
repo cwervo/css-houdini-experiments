@@ -1,31 +1,38 @@
 class DancingBarsPainter {
     // Typed OM
     static get inputProperties() {
-        return ['--line-color'];
+        return ['--bar-color', '--side-length'];
     }
 
     paint(ctx, geom, props) {
         const lineWidth = geom.width * 0.01;
 
         ctx.lineWidth = lineWidth;
-        // ctx.strokeStyle = 'green';
-        ctx.strokeStyle = props.get('--line-color');
+        ctx.strokeStyle = props.get('--box-color');
+        let sideLength = props.get('--side-length');
 
+        console.log(props.get('--side-length'))
 
         let points = [
             geom.width * 0.1,
             geom.width * 0.1,
-            geom.width * 0.4,
-            geom.width * 0.4
+            geom.width * 0.5,
+            geom.width * 0.5,
         ]
 
-        ctx.rect(...points);
+        ctx.rect(...points)
 
-        // let shiftedPoints = points.map(p => p + geom.width * 0.1)
-        //
-        // ctx.rect(...shiftedPoints);
+        let shiftedPoints = []
 
-        ctx.stroke();
+        for (let i = 0; i < 4; ++i) {
+            let newPoint = points[i] + (sideLength * 10)
+            shiftedPoints.push(newPoint)
+        }
+
+        ctx.rect(...shiftedPoints)
+
+        ctx.stroke()
+    }
 }
 
-registerPaint('necker-cube', DancingBarsPainter);
+registerPaint('dancing-bars', DancingBarsPainter);
