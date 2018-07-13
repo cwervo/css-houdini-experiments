@@ -9,25 +9,36 @@
         <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
+        <section id="no-houdini">
+            Looks like you don't have Houdini support in your browser yet.
+            If you're in Google Chrome you can try going to
+            <code>chrome://flags/#enable-experimental-web-platform-features</code>
+            and enabling "Experimental Web Platform Features" &amp; then reloading this page!
+        </section>
+
         <textarea class="houdini"></textarea>
         <div class="sibling" />
 
             <script>
-                CSS.registerProperty(
-                    {
-                        name: '--box-color',
-                        syntax: '<color>',
-                        initialValue: 'red',
-                        inherits: false
-                    },
-                    {
-                        name: '--side-length',
-                        syntax: '<number>',
-                        initialValue: '1',
-                        inherits: false
-                    }
-                );
-                CSS.paintWorklet.addModule('worklet.js');
+                if (CSS.registerProperty !== undefined) {
+                    document.querySelector('#no-houdini').style.visibility = "hidden";
+
+                    CSS.registerProperty(
+                        {
+                            name: '--box-color',
+                            syntax: '<color>',
+                            initialValue: 'red',
+                            inherits: false
+                        },
+                        {
+                            name: '--side-length',
+                            syntax: '<number>',
+                            initialValue: '1',
+                            inherits: false
+                        }
+                    );
+                    CSS.paintWorklet.addModule('worklet.js');
+                }
             </script>
     </body>
 </html>
