@@ -1,10 +1,11 @@
 .houdini {
-    background-image: paint(dancing-bars);
+    background-image: paint(necker-cube);
 
     width: 400px;
     height: 400px;
-    border: 2px solid red;
-    animation: colorRotate 2s steps(10) infinite;
+    border: 2px solid blue;
+    --side-length: 2;
+    /* animation: colorRotate 2s steps(10) infinite; */
 }
 
 @keyframes colorRotate {
@@ -12,17 +13,6 @@
         --box-color: red;
     }
     100% {
-        --box-color: green;
+        --box-color: #BAE;
     }
 }
-
-
-/* .houdini {
-    -webkit-mask-image: paint(dancing-bars);
-
-    background: url('assets/shmebulock_ftw.png');
-    background-size: cover;
-
-    width: 600px;
-    height: 400px;
-} */

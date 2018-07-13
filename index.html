@@ -9,28 +9,25 @@
         <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
-        <script>
-            CSS.paintWorklet.addModule('worklet.js');
-        </script>
-
         <textarea class="houdini"></textarea>
         <div class="sibling" />
 
             <script>
-                CSS.registerProperty({
-                    name: '--box-color',
-                    syntax: '<color>',
-                    initialValue: 'green',
-                    inherits: false
-                });
-
-
-                CSS.registerProperty({
-                    name: '--side-length',
-                    syntax: '<number>',
-                    initialValue: '1',
-                    inherits: false
-                });
+                CSS.registerProperty(
+                    {
+                        name: '--box-color',
+                        syntax: '<color>',
+                        initialValue: 'red',
+                        inherits: false
+                    },
+                    {
+                        name: '--side-length',
+                        syntax: '<number>',
+                        initialValue: '1',
+                        inherits: false
+                    }
+                );
+                CSS.paintWorklet.addModule('worklet.js');
             </script>
     </body>
 </html>
