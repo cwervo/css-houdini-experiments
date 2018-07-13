@@ -1,0 +1,28 @@
+.houdini {
+    background-image: paint(necker-cube);
+
+    width: 400px;
+    height: 400px;
+    border: 2px solid red;
+    animation: colorRotate 2s steps(10) infinite;
+}
+
+
+@keyframes colorRotate {
+    0% {
+        --line-color: red;
+    }
+    100% {
+        --line-color: green;
+    }
+}
+
+/* .houdini { */
+/*     -webkit-mask-image: paint(necker-cube); */
+/*  */
+/*     background: url('assets/shmebulock_ftw.png'); */
+/*     background-size: cover; */
+/*  */
+/*     width: 600px; */
+/*     height: 400px; */
+/* } */
