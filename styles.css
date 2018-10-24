@@ -14,21 +14,52 @@ body {
     font-size: 1.25em;
 }
 
-.houdini {
+#houdini-bg {
     background-image: paint(necker-cube);
 
     width: 400px;
     height: 400px;
     border: 2px solid blue;
     --side-length: 2;
-    /* animation: colorRotate 2s steps(10) infinite; */
+    animation: colorRotate 2s steps(10) infinite;
 }
 
 @keyframes colorRotate {
     0% {
-        --box-color: red;
+      --custom-color: red;
     }
     100% {
-        --box-color: #BAE;
+      --custom-color: #BAE;
+    }
+}
+
+/* ------  loading circle stuff ------*/
+#loading-circle {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 3em;
+  
+  background-image: paint(loading-circle);
+
+  width: 400px;
+  height: 400px;
+  --line-color: red;
+  --line-width: 10;
+  --percentage: --var(one,0);
+  padding-top: 40%;
+
+/*   animation: mockLoading 2s steps(10) infinite; */
+}
+
+#loading-circle div {
+  margin: 0
+}
+
+@keyframes mockLoading {
+    0% {
+      --percentage: 0;
+    }
+    100% {
+      --percentage: 100;
     }
 }

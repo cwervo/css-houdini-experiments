@@ -15,8 +15,13 @@
             <code>chrome://flags/#enable-experimental-web-platform-features</code>
             and enabling "Experimental Web Platform Features" &amp; then reloading this page!
         </section>
-
-        <textarea class="houdini"></textarea>
+      
+      
+      <div style="display: grid; grid-template-columns: 50% 50%;">
+        <textarea id="houdini-bg"></textarea>
+        <textarea id="loading-circle">0%</textarea>
+      </div>
+      
         <div class="sibling" />
 
             <script>
@@ -25,7 +30,7 @@
 
                     CSS.registerProperty(
                         {
-                            name: '--box-color',
+                            name: '--custom-color',
                             syntax: '<color>',
                             initialValue: 'red',
                             inherits: false
@@ -35,10 +40,30 @@
                             syntax: '<number>',
                             initialValue: '1',
                             inherits: false
+                        },
+                        {
+                            name: '--line-color',
+                            syntax: '<color>',
+                            initialValue: 'black',
+                            inherits: false
+                        },
+                        {
+                            name: '--line-width',
+                            syntax: '<number>',
+                            initialValue: '1',
+                            inherits: false
+                        },
+                        {
+                            name: '--percentage',
+                            syntax: '<number>',
+                            initialValue: '100',
+                            inherits: true
                         }
                     );
-                    CSS.paintWorklet.addModule('worklet.js');
+                    CSS.paintWorklet.addModule('necker-worklet.js');
+                    CSS.paintWorklet.addModule('loading-worklet.js');
                 }
             </script>
+      <script src="loading-worklet-anim.js"></script>
     </body>
 </html>

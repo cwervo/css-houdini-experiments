@@ -3,7 +3,7 @@ class NeckerCubePainter {
     static get inputProperties() {
         return [
             '--side-length',
-            '--box-color',
+            '--custom-color',
         ];
     }
 
@@ -12,7 +12,7 @@ class NeckerCubePainter {
 
         ctx.beginPath();
         ctx.lineWidth = lineWidth;
-        ctx.strokeStyle = props.get('--box-color');
+        ctx.strokeStyle = props.get('--custom-color');
         let sideLength = props.get('--side-length');
 
         let x = geom.width * 0.1
